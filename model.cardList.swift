@@ -13,7 +13,7 @@ extension model
         /// 
         /// So, for singleton use, be careful to initialize it once as intended. An instantiation of this class elsewhere is reserved for testing purposes only.
         ///
-        var shared: CardLists!
+        static var shared: CardLists!
     
         private let cards: [Card]
         init(cards: [Card]) {   self.cards = cards   }
