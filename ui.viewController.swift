@@ -2,6 +2,8 @@ import UIKit
 
 class ui_ViewController: UIViewController
 {
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -12,7 +14,11 @@ class ui_ViewController: UIViewController
     
     func fetchDataIfAbsent()
     {
-        if model.CardLists.shared != nil {   return   }
+        if model.CardLists.shared != nil 
+        {   
+            loadingIndicator.isHidden = true
+            return   
+        }
         
         self.view.isUserInteractionEnabled = false
         
@@ -22,7 +28,11 @@ class ui_ViewController: UIViewController
             {
                 case .success(let cardLists): 
                     model.CardLists.shared = cardLists
-                    DispatchQueue.main.async {   [weak self] in self?.view.isUserInteractionEnabled = true   }
+                    DispatchQueue.main.async {   [weak self]
+                    in 
+                        self?.view.isUserInteractionEnabled = true   
+                        self?.loadingIndicator.isHidden = true
+                    }
                     
                 case .failure(let error):
                     DispatchQueue.main.async {   [weak self] in self?.alertFetchFailureAndCloseApp(error)   }
