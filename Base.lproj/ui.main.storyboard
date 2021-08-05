@@ -300,6 +300,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t3E-Ey-t2b"/>
+                    <connections>
+                        <outlet property="searchBar" destination="IdC-FL-FCD" id="dYr-WM-3YY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvj-jI-XLB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -3,11 +3,24 @@ import UIKit
 class ui_TableViewController: UITableViewController
 {
     var isShowingMyList = false
+    var nameFilter: String = ""
+    
+    private var cardList: [model.Card]
+    {
+        let cardLists = model.CardLists.shared!
+        let cardList = isShowingMyList ? cardLists.cardsInMyList : cardLists.cardsNotInMyList
+        
+        if nameFilter.isEmpty {   return cardList   }
+        else
+        {   
+            return cardList.filter {   $0.name.starts(with: nameFilter)   } 
+        }
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        guard let cardLists = model.CardLists.shared else {   return 0   }
-        return isShowingMyList ? cardLists.cardsInMyList.count : cardLists.cardsNotInMyList.count
+        guard let _ = model.CardLists.shared else {   return 0   }
+        return cardList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -19,7 +32,7 @@ class ui_TableViewController: UITableViewController
         }
         
         let cardLists = model.CardLists.shared!
-        let cardList = isShowingMyList ? cardLists.cardsInMyList : cardLists.cardsNotInMyList 
+        let cardList = self.cardList 
         let card = cardList[indexPath.row]
         cell.nameLabel.text = card.name
         cell.cornerBtnAction =  {   [weak self]
