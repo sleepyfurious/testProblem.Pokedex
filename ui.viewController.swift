@@ -3,6 +3,7 @@ import UIKit
 class ui_ViewController: UIViewController
 {
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    static var tableVC: ui_TableViewController!
     
     override func viewDidLoad()
     {
@@ -10,6 +11,18 @@ class ui_ViewController: UIViewController
         // Do any additional setup after loading the view.
         
         fetchDataIfAbsent()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        switch segue.identifier
+        { 
+            case "embededMyList":
+                Self.tableVC = (segue.destination as! ui_TableViewController)
+                Self.tableVC.isShowingMyList = true
+                
+            default: break
+        }
     }
     
     func fetchDataIfAbsent()
@@ -32,6 +45,7 @@ class ui_ViewController: UIViewController
                     in 
                         self?.view.isUserInteractionEnabled = true   
                         self?.loadingIndicator.isHidden = true
+                        Self.tableVC.tableView.reloadData()
                     }
                     
                 case .failure(let error):

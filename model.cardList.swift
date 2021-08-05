@@ -30,5 +30,18 @@ extension model
         {
             cards.filter {   !myList.contains($0.id)   }
         }
+        
+        var hp_max: Int 
+        {   
+            cards.reduce(0) {   partialResult, x in   max(partialResult, x.hp)   } 
+        }
+        var str_max: Int
+        {
+            cards.reduce(0) {   partialResult, x in   max(partialResult, x.str)   }
+        }
+        var weak_max: Int
+        {
+            cards.reduce(0) {   partialResult, x in   max(partialResult, x.weakness)   }
+        }
     }
 }
