@@ -18,6 +18,8 @@
 		A1D11D9126BBE6B900A286FF /* model.cardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D11D9026BBE6B900A286FF /* model.cardList.swift */; };
 		A1D11D9526BBEB7C00A286FF /* model.cardList.tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D11D9426BBEB7C00A286FF /* model.cardList.tests.swift */; };
 		A1D11D9926BBEC7900A286FF /* app.placeholder.uiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D11D9826BBEC7900A286FF /* app.placeholder.uiTests.swift */; };
+		A1D11D9B26BBF6BF00A286FF /* model.cardList+fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D11D9A26BBF6BF00A286FF /* model.cardList+fetcher.swift */; };
+		A1D11D9D26BC063000A286FF /* model.cardList+fetcher.tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D11D9C26BC062F00A286FF /* model.cardList+fetcher.tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		A1D11D9026BBE6B900A286FF /* model.cardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.cardList.swift; sourceTree = "<group>"; };
 		A1D11D9426BBEB7C00A286FF /* model.cardList.tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.cardList.tests.swift; sourceTree = "<group>"; };
 		A1D11D9826BBEC7900A286FF /* app.placeholder.uiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app.placeholder.uiTests.swift; sourceTree = "<group>"; };
+		A1D11D9A26BBF6BF00A286FF /* model.cardList+fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "model.cardList+fetcher.swift"; sourceTree = "<group>"; };
+		A1D11D9C26BC062F00A286FF /* model.cardList+fetcher.tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "model.cardList+fetcher.tests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 				A1D11D8A26BBDE2600A286FF /* model.card.swift */,
 				A1D11D9026BBE6B900A286FF /* model.cardList.swift */,
 				A1D11D9426BBEB7C00A286FF /* model.cardList.tests.swift */,
+				A1D11D9A26BBF6BF00A286FF /* model.cardList+fetcher.swift */,
+				A1D11D9C26BC062F00A286FF /* model.cardList+fetcher.tests.swift */,
 				A1D11CB326BAF5B300A286FF /* ui.launchScreen.storyboard */,
 				A1D11CAE26BAF5AE00A286FF /* ui.main.storyboard */,
 				A1D11CAC26BAF5AE00A286FF /* ui.viewController.swift */,
@@ -246,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1D11D9126BBE6B900A286FF /* model.cardList.swift in Sources */,
+				A1D11D9B26BBF6BF00A286FF /* model.cardList+fetcher.swift in Sources */,
 				A1D11CAD26BAF5AE00A286FF /* ui.viewController.swift in Sources */,
 				A1D11CA926BAF5AE00A286FF /* app.delegate.app.swift in Sources */,
 				A1D11CAB26BAF5AE00A286FF /* app.delegate.scene.swift in Sources */,
@@ -259,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1D11D9526BBEB7C00A286FF /* model.cardList.tests.swift in Sources */,
+				A1D11D9D26BC063000A286FF /* model.cardList+fetcher.tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
